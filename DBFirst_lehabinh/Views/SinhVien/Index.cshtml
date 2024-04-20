@@ -1,0 +1,43 @@
+﻿@model List<DBFirst_lehabinh.Repository.Models.SinhVienViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<hr />
+<form>
+    <h2>Thông tin sinh viên trong khoa công nghệ số</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr class="table-active">
+                    <th>MSV</th>
+                    <th>Tên</th>
+                    <th>Tuổi</th>
+                    <th>Mã lớp</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sv in Model)
+                {
+                    <tr>
+                        <td>@sv.SinhVienId</td>
+                        <td>@sv.Ten</td>
+                        <td>@sv.Tuoi</td>
+                        <td>@sv.LopId</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Không có dữ liệu để hiển thị.</p>
+    }
+</form>
+</div>
+
